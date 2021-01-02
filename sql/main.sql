@@ -1,6 +1,5 @@
 CREATE DATABASE Stocks;
 
-DROP TABLE `StockList`;
 CREATE TABLE IF NOT EXISTS `StockList` (
     `id` VARCHAR(64) NOT NULL,
     `name` VARCHAR(64) NOT NULL,
