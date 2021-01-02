@@ -1,0 +1,22 @@
+CREATE DATABASE Stocks;
+
+DROP TABLE `StockList`;
+CREATE TABLE IF NOT EXISTS `StockList` (
+    `id` VARCHAR(64) NOT NULL,
+    `name` VARCHAR(64) NOT NULL,
+    `last_update_date` DATE NOT NULL ,
+    PRIMARY KEY `id`(`id`)
+) ENGINE = INNODB DEFAULT CHARSET utf8;
+
+CREATE TABLE IF NOT EXISTS `StockData` (
+    `id` VARCHAR(64) NOT NULL,
+    `time` DATE NOT NULL,
+    `open` DOUBLE NOT NULL DEFAULT 0 COMMENT '开盘价',
+    `high` DOUBLE NOT NULL DEFAULT 0 COMMENT '最高价',
+    `low` DOUBLE NOT NULL DEFAULT 0 COMMENT '最低价',
+    `close` DOUBLE NOT NULL DEFAULT 0 COMMENT '收盘价',
+    `volume` BIGINT NOT NULL DEFAULT 0 COMMENT '成交量',
+    `turn` DOUBLE NOT NULL DEFAULT 0 COMMENT '换手率',
+    `pctChg` DOUBLE NOT NULL DEFAULT 0 COMMENT '涨跌幅（百分比）',
+    PRIMARY KEY (`id`, `time`)
+) ENGINE = INNODB DEFAULT CHARSET utf8;
